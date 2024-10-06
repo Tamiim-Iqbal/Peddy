@@ -21,6 +21,7 @@
               colors: {
                 primary: '#0E7A81',
                 light: 'rgba(19, 19, 19, 0.6)',
+                input: 'rgba(255, 255, 255, 0.1)',
               },
               fontFamily: {
                 lato: ['Lato', 'system-ui'],
@@ -114,7 +115,46 @@
     <main></main>
 
     <!-- Container : Footer -->
-    <footer></footer>
+    <footer class="bg-black">
+        <section class="w-11/12 mx-auto text-white pt-10 pb-3 pl-5 md:pl-0 flex flex-col md:flex-row justify-between ">
+            <div class="mb-7">
+              <div class="flex items-center gap-2 mb-3 lg:mb-5">
+                <div class="w-6 lg:w-auto">
+                  <img src="resources/images/logo.webp" alt="">
+                </div>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">Peddy</h2> 
+              </div>
+              <div class="text-sm lg:text-base">
+                <p>Location : av. Washington 165, NY CA</p>
+                <p>54003</p>
+                <p>Phone : +31 85 964 47 25</p>
+                <p>Email : info@peddy.com</p>
+                <p>Opening hours : 9.00 AM - 5.00 PM</p>
+              </div>
+            </div>
+
+            <div class="mb-7 pt-3">
+              <h4 class="lg:text-xl font-semibold mb-3 lg:mb-5">Useful Links</h4>
+              <div class="text-sm lg:text-base">
+                <p class="text-gray-400">Home</p>
+                <p class="text-gray-400">About Us</p>
+                <p class="text-gray-400">Animals</p>
+                <p class="text-gray-400">Foundation</p>
+                <p class="text-gray-400">Contact</p>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <h4 class="lg:text-xl font-semibold mb-3 lg:mb-5">Drop a Message</h4>
+              <div>
+                <input class="w-3/5 md:w-auto mt-2 py-2 px-3 rounded-lg bg-input font-semibold text-xs md:text-sm lg:text-base" type="email" name="" id="" placeholder="Enter your email">
+                <br>
+                <button class="w-3/5 mb-3 md:w-full mt-5 py-2 px-3 rounded-lg text-white bg-primary font-semibold text-xs md:text-sm lg:text-base hover:bg-input hover:text-primary border-2 border-primary" type="submit">Subscribe</button>
+               
+              </div>
+            </div>
+        </section>
+    </footer>
 
 
     <!-- Connections : Javascript -->
