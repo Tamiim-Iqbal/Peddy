@@ -20,6 +20,7 @@
             extend: {
               colors: {
                 primary: '#0E7A81',
+                plight:'rgba(14, 122, 129, 0.1)',
                 light: 'rgba(19, 19, 19, 0.6)',
                 input: 'rgba(255, 255, 255, 0.1)',
               },
@@ -32,6 +33,8 @@
         }
       </script>
 
+      <!-- CSS-->
+      <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Container : Header -->
@@ -96,7 +99,7 @@
             <div class="text-center">
               <h3> <span class="text-light text-xs md:text-sm lg:text-xl font-medium">Bringing Families Together</span> 🔥</h3>
               <h1 class="mt-4 font-bold text-2xl w-4/5 md:text-3xl md:w-3/6 lg:text-5xl lg:w-2/5 mx-auto">Your Path to Adoption Starts Here</h1>
-              <p class="mt-4 text-[10px] w-4/5 md:text-xs md:w-3/5 lg:text-base lg:w-1/2 mx-auto">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+              <p class="mt-4 text-[10px] w-4/5 md:text-xs md:w-3/5 lg:text-base lg:w-1/2 mx-auto">Begin your journey to welcoming a new member into your family. Explore our seamless process, expert guidance, and resources to support every step of your adoption experience.</p>
 
               <a href="">
                 <button class="mt-4 py-2 px-3 rounded-md text-white bg-primary font-medium text-xs md:text-sm lg:text-base hover:bg-white hover:text-primary border-2 border-primary">View More</button>
@@ -112,7 +115,34 @@
     </header>
 
     <!-- Container : Main -->
-    <main></main>
+    <main class="w-11/12 mx-auto mt-5 lg:mt-5">
+      <!-- Section : Categories -->
+      <div class="text-center">
+        <h3 class="text-base md:text-lg lg:text-2xl font-semibold">Adopt Your Best Friend</h3>
+        <p class="mt-4 text-[10px] w-4/5 md:text-xs md:w-3/5 lg:text-base lg:w-1/2 mx-auto">Find your perfect companion and make a lifelong connection. Explore a variety of lovable pets waiting for a caring home, ready to bring joy and companionship into your life.</p>
+      </div>
+      <!-- Buttons : Fetch Categories -->
+        <div id="category" class="flex justify-center gap-5 lg:gap-36 mt-1 lg:mt-10">
+
+        </div>
+
+      <!-- Section :  All Pets-->
+      <section class="mt-5 md:mt-8 lg:mt-12">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xs md:text-sm lg:text-base font-semibold">Best Deal For You</h3>
+          <button class="mt-4 py-2 px-3 rounded-md text-white bg-primary font-medium text-xs md:text-sm lg:text-base hover:bg-white hover:text-primary border-2 border-primary">Sort by Price</button>
+        </div>
+
+      <!-- Fetch Pets -->
+      <section class="grid grid-cols-12">
+          <div id="all-pets" class="col-span-9">
+
+          </div>
+      </section>
+        
+      </section>
+      
+    </main>
 
     <!-- Container : Footer -->
     <footer class="bg-black">
@@ -159,5 +189,6 @@
 
     <!-- Connections : Javascript -->
     <script src="index.js"></script>
+    <script src="allpets.js"></script>
 </body>
 </html>
