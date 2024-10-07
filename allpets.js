@@ -30,22 +30,22 @@ const displayPets = (pets) => {
                 <h2 class="mb-2 font-semibold text-sm md:text-base lg:text-xl">${pet.pet_name}</h2>
                 <div class="flex gap-2 mb-1">
                     <img class="w-4 lg:w-auto" src="resources/breed.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Breed : ${pet.breed}</p>
+                    <p class="text-light text-xs md:text-sm lg:text-base"> Breed : ${pet.breed ? pet.breed : "Not Available"} </p>
                 </div>
 
                 <div class="flex gap-2 mb-1">
                     <img class="w-4 lg:w-auto" src="resources/birth.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Birth : ${pet.date_of_birth}</p>
+                    <p class="text-light text-xs md:text-sm lg:text-base"> Birth : ${pet.date_of_birth ? pet.date_of_birth : "Not Available"} </p>
                 </div>
 
                 <div class="flex gap-2 mb-1">
                     <img class="w-4 lg:w-auto" src="resources/gender.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Gender : ${pet.gender}</p>
+                    <p class="text-light text-xs md:text-sm lg:text-base"> Gender : ${pet.gender ? pet.gender : "Not Available"} </p>
                 </div>
 
                 <div class="flex gap-2 mb-2">
                     <img class="w-4 lg:w-auto" src="resources/price.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Gender : ${pet.price}$</p>
+                    <p class="text-light text-xs md:text-sm lg:text-base"> Price : ${pet.price ? pet.price + '$':  "Not Available" } </p>
                 </div>
             </div>  
         </div>
