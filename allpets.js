@@ -3,10 +3,43 @@
 const loadPets = async() => {
     const response = await fetch('https://openapi.programming-hero.com/api/peddy/pets');
     const data = await response.json();
-    console.log(data.pets);
+    // console.log(data.pets);
     displayPets(data.pets);
 
 }
+
+
+
+
+
+const displayImage = async(petId) => 
+{
+    
+    const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`);
+    const data = await response.json();
+    // console.log(data.petData);
+    const pet = data.petData;
+
+    const likeImageContainer = document.getElementById("like-image");
+    // create img
+    const img = document.createElement("div");
+    img.innerHTML = 
+    `
+    <img class="h-full object-cover rounded-lg" src="${pet.image}"/>
+    `
+     
+    likeImageContainer.appendChild(img);
+
+    const icon = document.getElementById(`icon-${petId}`);
+    // icon.classList.remove("fa-regular");
+
+    icon.classList.add("text-primary");
+    icon.classList.toggle("fa-solid");
+}
+
+
+
+
 
 const displayPets = (pets) => {
 
@@ -53,8 +86,8 @@ const displayPets = (pets) => {
         <hr>
 
         <div class="flex justify-between">
-            <button class="mt-4 py-2 px-3 rounded-md font-semibold text-xs md:text-sm lg:text-base hover:bg-white hover:border-primary hover:text-primary border border-plight">
-            <i class="fa-regular fa-heart"></i>
+            <button onclick=displayImage('${pet.petId}') class="mt-4 py-2 px-3 rounded-md font-semibold text-xs md:text-sm lg:text-base hover:bg-white hover:border-primary hover:text-primary border border-plight">
+            <i id="icon-${pet.petId}" class="fa-regular fa-heart"></i>
 
             </button>
 
