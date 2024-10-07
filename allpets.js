@@ -33,7 +33,7 @@ const displayImage = async(petId) =>
     const icon = document.getElementById(`icon-${petId}`);
     // icon.classList.remove("fa-regular");
 
-    icon.classList.add("text-primary");
+    icon.classList.toggle("text-primary");
     icon.classList.toggle("fa-solid");
 }
 
