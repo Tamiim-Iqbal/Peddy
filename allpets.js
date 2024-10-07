@@ -39,11 +39,32 @@ const displayImage = async(petId) =>
 
 
 
+const loadCategoriesPets = (category) => {
+    console.log(category);
+
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
+      .then((res) => res.json())
+      .then((data) => {
+        //active class remove
+        // removeActiveClass();
+  
+        //id er class k active korao
+        // const activeBtn = document.getElementById(`btn-${id}`);
+        // activeBtn.classList.add("active");
+        displayPets(data.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+
+
+
 
 
 const displayPets = (pets) => {
 
     const petsContainer = document.getElementById("all-pets");
+    petsContainer.innerHTML = "";
 
     pets.forEach(pet => {
         // console.log(pet);
