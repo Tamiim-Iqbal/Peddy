@@ -1,5 +1,8 @@
 // Fetch & Display All Pets
 
+let allPet = [];
+
+
 const loadPets = async() => {
     const response = await fetch('https://openapi.programming-hero.com/api/peddy/pets');
     const data = await response.json();
@@ -91,9 +94,11 @@ const loadCategoriesPets = (category) => {
                 <h2 class="text-center text-xl font-bold"> No Content Here in this Category </h2> 
             </div>
             `;
+            allPet = [];
         } else {
             petsContainer.classList.add("grid");
 
+            allPet = pets;
             pets.forEach(pet => {
                 // Create card
                 const card = document.createElement("div");
