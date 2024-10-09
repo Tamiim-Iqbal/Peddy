@@ -70,83 +70,86 @@ const loadCategoriesPets = (category) => {
 
 
 
-const displayPets = (pets) => {
-
+  const displayPets = (pets) => {
     const petsContainer = document.getElementById("all-pets");
-    petsContainer.innerHTML = "";
+    petsContainer.innerHTML = ""; // Clear the container initially
 
+    // Show loading spinner before displaying pets
+    const loadingSpinner = document.getElementById('loading-spinner');
+    loadingSpinner.classList.remove('hidden'); // Show the loading spinner
 
-    if (pets.length == 0)
-    {
-        petsContainer.classList.remove("grid");
-        petsContainer.innerHTML = 
-        `
-        <div class="min-h-[400px] flex flex-col gap-5 justify-center items-center">
-        <img src="resources/images/error.webp" /> 
-        <h2 class="text-center text-xl font-bold"> No Content Here in this Categery </h2> 
-        </div>
-        `;
-    }
-    else{
-        petsContainer.classList.add("grid");
-    }
+    // Delay for 2 seconds before displaying pets
+    setTimeout(() => {
+        loadingSpinner.classList.add('hidden'); // Hide the loading spinner
 
-    pets.forEach(pet => {
-        // console.log(pet);
+        if (pets.length === 0) {
+            petsContainer.classList.remove("grid");
+            petsContainer.innerHTML = 
+            `
+            <div class="min-h-[400px] flex flex-col gap-5 justify-center items-center">
+                <img src="resources/images/error.webp" /> 
+                <h2 class="text-center text-xl font-bold"> No Content Here in this Category </h2> 
+            </div>
+            `;
+        } else {
+            petsContainer.classList.add("grid");
 
-        // create card
-        const card = document.createElement("div");
-        card.className = "card card-compact border p-4"
+            pets.forEach(pet => {
+                // Create card
+                const card = document.createElement("div");
+                card.className = "card card-compact border p-4"
 
-        card.innerHTML = 
-        `
-        <figure class="h-56 rounded-lg relative">
-            <img class="h-full object-cover" src="${pet.image}"/>
-        </figure>
+                card.innerHTML = 
+                `
+                <figure class="h-56 rounded-lg relative">
+                    <img class="h-full object-cover" src="${pet.image}"/>
+                </figure>
 
-        <div class="px-0 py-3 flex items-center gap-4">
-            <div>
-                <h2 class="mb-2 font-semibold text-sm md:text-base lg:text-xl">${pet.pet_name}</h2>
-                <div class="flex gap-2 mb-1">
-                    <img class="w-4 lg:w-auto" src="resources/breed.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Breed : ${pet.breed ? pet.breed : "Not Available"} </p>
+                <div class="px-0 py-3 flex items-center gap-4">
+                    <div>
+                        <h2 class="mb-2 font-semibold text-sm md:text-base lg:text-xl">${pet.pet_name}</h2>
+                        <div class="flex gap-2 mb-1">
+                            <img class="w-4 lg:w-auto" src="resources/breed.png">
+                            <p class="text-light text-xs md:text-sm lg:text-base"> Breed : ${pet.breed ? pet.breed : "Not Available"} </p>
+                        </div>
+
+                        <div class="flex gap-2 mb-1">
+                            <img class="w-4 lg:w-auto" src="resources/birth.png">
+                            <p class="text-light text-xs md:text-sm lg:text-base"> Birth : ${pet.date_of_birth ? pet.date_of_birth : "Not Available"} </p>
+                        </div>
+
+                        <div class="flex gap-2 mb-1">
+                            <img class="w-4 lg:w-auto" src="resources/gender.png">
+                            <p class="text-light text-xs md:text-sm lg:text-base"> Gender : ${pet.gender ? pet.gender : "Not Available"} </p>
+                        </div>
+
+                        <div class="flex gap-2 mb-2">
+                            <img class="w-4 lg:w-auto" src="resources/price.png">
+                            <p class="text-light text-xs md:text-sm lg:text-base"> Price : ${pet.price ? pet.price + '$':  "Not Available" } </p>
+                        </div>
+                    </div>  
                 </div>
 
-                <div class="flex gap-2 mb-1">
-                    <img class="w-4 lg:w-auto" src="resources/birth.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Birth : ${pet.date_of_birth ? pet.date_of_birth : "Not Available"} </p>
+                <hr>
+
+                <div class="flex justify-between">
+                    <button onclick=displayImage('${pet.petId}') class="mt-4 py-2 px-3 rounded-md font-semibold text-xs md:text-sm lg:text-base hover:bg-white hover:border-primary hover:text-primary border border-plight">
+                    <i id="icon-${pet.petId}" class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <button id="adopt-${pet.petId}" onclick="displayAdopt(this,'${pet.petId}')" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Adopt</button>
+                    
+                    <button onclick="loadDetails('${pet.petId}')" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Details</button>
                 </div>
+                `;
 
-                <div class="flex gap-2 mb-1">
-                    <img class="w-4 lg:w-auto" src="resources/gender.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Gender : ${pet.gender ? pet.gender : "Not Available"} </p>
-                </div>
+                // Add card to pets container
+                petsContainer.append(card);
+            });
+        }
+    }, 2000); // 2000 milliseconds = 2 seconds
+};
 
-                <div class="flex gap-2 mb-2">
-                    <img class="w-4 lg:w-auto" src="resources/price.png">
-                    <p class="text-light text-xs md:text-sm lg:text-base"> Price : ${pet.price ? pet.price + '$':  "Not Available" } </p>
-                </div>
-            </div>  
-        </div>
-
-        <hr>
-
-        <div class="flex justify-between">
-            <button onclick=displayImage('${pet.petId}') class="mt-4 py-2 px-3 rounded-md font-semibold text-xs md:text-sm lg:text-base hover:bg-white hover:border-primary hover:text-primary border border-plight">
-            <i id="icon-${pet.petId}" class="fa-regular fa-heart"></i>
-
-            </button>
-
-            <button id="adopt-${pet.petId}" onclick="displayAdopt(this,'${pet.petId}')" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Adopt</button>
-            
-            <button onclick="loadDetails('${pet.petId}')" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Details</button>
-        </div>
-        `;
-
-        // add card to pets container
-        petsContainer.append(card);
-    })
-}
 
 loadPets();
 
