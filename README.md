@@ -1,5 +1,15 @@
 <h1 align="center"> Peddy </h1>
-<br>
+
+## About the project _
+<h4><b>Peddy</b> Pet Adoption website with JS</h4>
+
+### Live Demo : <a target='_blank' href='https://peddy.vercel.app/'>Peddy</a>
+
+### Build with :
+
+* <img width='17' src='https://i.ibb.co/0nM8BvN/html.png'/> HTML5
+* <img width='17' src='https://i.ibb.co/YQgZTgT/css.png'/> Tailwind CSS
+* <img width='17' src='https://i.ibb.co/g41kf3h/javascript.png'/> JS
 
 ## APIs _
 
