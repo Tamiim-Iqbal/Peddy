@@ -128,7 +128,7 @@ const displayPets = (pets) => {
 
             </button>
 
-            <button onclick="displayAdopt()" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Adopt</button>
+            <button id="adopt-${pet.petId}" onclick="displayAdopt(this,'${pet.petId}')" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Adopt</button>
             
             <button onclick="loadDetails('${pet.petId}')" class="mt-4 py-2 px-3 rounded-md text-primary font-semibold text-xs md:text-sm lg:text-base border border-plight hover:border-primary">Details</button>
         </div>

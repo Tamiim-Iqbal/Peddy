@@ -28,14 +28,16 @@ function startCountdown() {
   
 }
 
-const displayAdopt = () => {
+const displayAdopt = (button, petId) => {
+    
+    button.innerText = "Adopted";
+    // console.log(petId);
+
     // way 1
     // document.getElementById("showAdoptData").click();
-    
     // way 2
-    
     customAdopt.showModal();
     startCountdown();
     
-    
+       
   }
