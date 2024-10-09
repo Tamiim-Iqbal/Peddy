@@ -160,7 +160,7 @@
     <button id="showModalData" class="btn hidden" onclick="customModal.showModal()">
       open modal
     </button>
-    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+    <dialog id="customModal" class="modal modal-middle">
       <div class="modal-box">
         <div id="modal-content">
 
@@ -175,6 +175,32 @@
       </div>
     </dialog>
       
+
+          <!-- section : Modal - Adopt -->
+      <!-- Open the modal using ID.showModal() method -->
+      <button id="showAdoptData" class="btn hidden" onclick="customAdopt.showModal()">
+        open modal
+      </button>
+      <dialog id="customAdopt" class="modal modal-middle">
+        <div class="modal-box">
+          <div id="adopt-content">
+            <div class="w-1/4 mx-auto mb-0">
+              <img src="resources/handshake.jpg">
+            </div> 
+            <h2 class="text-center mt-0 font-bold text-lg md:text-xl lg:text-3xl mb-4">Congrates!</h2>
+            <p class="text-center text-sm md:text-base lg:text-lg"> Adoption Process is start for Your Pet</p>
+          </div>
+          <div class="modal-action flex justify-center">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <!-- <button class="btn w-full">Close</button> -->
+              <span class="mt-0 countdown font-mono text-3xl md:text-5xl lg:text-6xl">
+                <span id="countdown" style="--value:${counter};"></span>
+              </span>
+            </form>
+          </div>
+        </div>
+      </dialog>
         
 
       
@@ -225,6 +251,7 @@
     <!-- Connections : Javascript -->
     <script src="index.js"></script>
     <script src="details_modal.js"></script>
+    <script src="adopt_modal.js"></script>
     <script src="allpets.js"></script>
 </body>
 </html>

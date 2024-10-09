@@ -41,7 +41,7 @@
 4. Modal Window_
 
     When the "Details" button is clicked, open a modal that displays all pet information like figma
-    The modal should close when the user clicks close button. ❓
+    The modal should close when the user clicks close button. ✅
 
 5. Footer_ 
 
@@ -62,7 +62,7 @@
     3. Adopt Button Behavior
         Implement an adoption process. When the "Adopt" button is clicked, show a countdown (3, 2, 1) and then change the button text to "Adopted." ❓
     4. Handle Null or Undefined Values ✅
-        If any values from the API (e.g., pet breed, birth date) are null or undefined, display a placeholder or relevant message instead of leaving it blank. ❓
+        If any values from the API (e.g., pet breed, birth date) are null or undefined, display a placeholder or relevant message instead of leaving it blank. ✅
 
 8. A Beautiful README.md File_
 
