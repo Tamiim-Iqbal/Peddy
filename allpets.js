@@ -94,6 +94,18 @@ const loadCategoriesPets = (category) => {
                 <h2 class="text-center text-xl font-bold"> No Content Here in this Category </h2> 
             </div>
             `;
+
+            // remove right div part
+            let likeImageDiv = document.getElementById("like-image");
+            let leftDiv = document.getElementById("left-div");
+            // Check if the div is empty
+            if (likeImageDiv.innerHTML.trim() === "") 
+            {
+                likeImageDiv.parentElement.style.display = "none";           // Hide the parent div
+                leftDiv.classList.remove("col-span-7", "md:col-span-9");     // Remove the span classes
+                leftDiv.classList.add("col-span-12");                        // Make it take the full width
+            }
+            
             allPet = [];
         } else {
             petsContainer.classList.add("grid");
