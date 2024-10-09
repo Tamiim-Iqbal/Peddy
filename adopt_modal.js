@@ -31,6 +31,11 @@ function startCountdown() {
 const displayAdopt = (button, petId) => {
     
     button.innerText = "Adopted";
+    button.disabled = true;
+
+    if (button.disabled) {
+      button.style.border = "none"; 
+    }
     // console.log(petId);
 
     // way 1
