@@ -91,7 +91,7 @@ const loadCategoriesPets = (category) => {
             `
             <div class="min-h-[400px] flex flex-col gap-5 justify-center items-center">
                 <img src="resources/images/error.webp" /> 
-                <h2 class="text-center text-xl font-bold"> No Content Here in this Category </h2> 
+                <h2 class="text-center text-xl font-bold"> No Pet Here in this Category </h2> 
             </div>
             `;
 
