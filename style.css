@@ -1,3 +1,6 @@
 .active{
-    background-color: red;
+    background-color: rgba(14, 122, 129, 0.1);
+    border-color: #0E7A81;
+    border: 1px solid #0E7A81;
+    border-radius: 10px;
 }

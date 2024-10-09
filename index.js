@@ -22,7 +22,7 @@ const displayCategories = (categories) =>
         buttonContainer.innerHTML = 
         //<button id="btn-${item.category_id}" onclick="loadCategoryVideos(${item.category_id})" class="btn category-btn">${item.category}</button>
         `
-            <button id="btn-${item.category_id}" onclick="loadCategoriesPets('${item.category}')" class="h-8 md:h-12 lg:h-14 flex gap-2 lg:gap-3 justify-center items-center category-btn mt-4 px-4 lg:px-6 rounded-md font-semibold text-xs md:text-sm lg:text-base hover:bg-white border hover:border-primary">
+            <button id="btn-${item.category}" onclick="loadCategoriesPets('${item.category}')" class="h-8 md:h-12 lg:h-14 flex gap-2 lg:gap-3 justify-center items-center category-btn mt-4 px-4 lg:px-6 rounded-md font-semibold text-xs md:text-sm lg:text-base hover:bg-white border hover:border-primary">
             <img class="w-1/3 md:w-1/4 lg:w-2/6" src='${item.category_icon}' alt="">
             ${item.category}</button>
         `;

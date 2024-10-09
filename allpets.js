@@ -38,6 +38,14 @@ const displayImage = async(petId) =>
 }
 
 
+const removeActiveClass = () => {
+    const buttons = document.getElementsByClassName("category-btn");
+    // console.log(buttons);
+    for (let btn of buttons) {
+      btn.classList.add("rounded-md");
+      btn.classList.remove("active");
+    }
+  };
 
 const loadCategoriesPets = (category) => {
     console.log(category);
@@ -46,11 +54,12 @@ const loadCategoriesPets = (category) => {
       .then((res) => res.json())
       .then((data) => {
         //active class remove
-        // removeActiveClass();
+        removeActiveClass();
   
         //id er class k active korao
-        // const activeBtn = document.getElementById(`btn-${id}`);
-        // activeBtn.classList.add("active");
+        const activeBtn = document.getElementById(`btn-${category}`);
+        activeBtn.classList.remove("rounded-md");
+        activeBtn.classList.add("active");
         displayPets(data.data);
       })
       .catch((error) => console.log(error));
