@@ -66,6 +66,22 @@ const displayPets = (pets) => {
     const petsContainer = document.getElementById("all-pets");
     petsContainer.innerHTML = "";
 
+
+    if (pets.length == 0)
+    {
+        petsContainer.classList.remove("grid");
+        petsContainer.innerHTML = 
+        `
+        <div class="min-h-[400px] flex flex-col gap-5 justify-center items-center">
+        <img src="resources/images/error.webp" /> 
+        <h2 class="text-center text-xl font-bold"> No Content Here in this Categery </h2> 
+        </div>
+        `;
+    }
+    else{
+        petsContainer.classList.add("grid");
+    }
+
     pets.forEach(pet => {
         // console.log(pet);
 
