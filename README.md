@@ -1,7 +1,7 @@
 <h1 align="center"> Peddy </h1>
 
 ## About the project _
-<h4><b>Peddy</b> Pet Adoption website with JS</h4>
+**Peddy** Pet Adoption website with Javascript
 
 ### Live Demo : <a target='_blank' href='https://peddy.vercel.app/'>Peddy</a>
 
